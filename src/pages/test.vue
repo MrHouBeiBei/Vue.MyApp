@@ -4,6 +4,8 @@
     <watch-test :oneString="boyA" @girlToBoy="receiveLove"></watch-test>
     
     <button @click="changboyA">改变父组件变量</button>
+    <button @click="changstore">getters</button>
+    <button @click="mutationsStore">mutations</button>
   </div>
 </template>
 
@@ -21,6 +23,10 @@ export default {
       boyA: 1
     }
   },
+  created() {
+    // console.log(this.$store.state.author)
+    // console.log(this.$store.getters.changeAuthor)
+  },
   methods: {
     changboyA() {
       this.boyA += 1
@@ -28,6 +34,14 @@ export default {
     },
     receiveLove(data) {
       console.log('父组件响应子组件事件', data)
+    },
+    changstore() {
+      this.$store.state.author = '测试一下'
+      console.log(this.$store.state.author)
+    },
+    mutationsStore() {
+      this.$store.commit('authorMutations', 'newValue')
+      console.log(this.$store.state.author)
     }
   }
 }
