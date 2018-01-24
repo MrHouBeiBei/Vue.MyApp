@@ -6,6 +6,7 @@
     <button @click="changboyA">改变父组件变量</button>
     <button @click="changstore">getters</button>
     <button @click="mutationsStore">mutations</button>
+    <button @click="action">action</button>
   </div>
 </template>
 
@@ -41,6 +42,10 @@ export default {
     },
     mutationsStore() {
       this.$store.commit('authorMutations', 'newValue')
+      console.log(this.$store.state.author)
+    },
+    action(){
+      this.$store.dispatch('actionsTest')
       console.log(this.$store.state.author)
     }
   }
