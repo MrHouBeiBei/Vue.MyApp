@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>{{msg}}</h2>
+    <p class="global">全局样式测试</p>
     <watch-test :oneString="boyA" @girlToBoy="receiveLove"></watch-test>
     
     <button @click="changboyA">改变父组件变量</button>

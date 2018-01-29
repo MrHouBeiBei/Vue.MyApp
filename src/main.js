@@ -6,6 +6,9 @@ import router from './router'
 import Vuex from 'vuex'
 import store from './vuex/store'
 
+//全局样式
+import "./components/style.css"
+
 // Vue.config.productionTip = false
 // Vue.config.silent = true
 
