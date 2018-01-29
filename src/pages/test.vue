@@ -2,6 +2,7 @@
   <div>
     <h2>{{msg}}</h2>
     <p class="global">全局样式测试</p>
+    <p class="lessTest">sass配置测试</p>
     <watch-test :oneString="boyA" @girlToBoy="receiveLove"></watch-test>
     
     <button @click="changboyA">改变父组件变量</button>
@@ -54,6 +55,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style lang="less" scoped>
+.lessTest{
+  font-size: 50/2px
+}
 </style>
+
