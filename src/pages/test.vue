@@ -43,7 +43,8 @@ export default {
       console.log(this.$store.state.author)
     },
     mutationsStore() {
-      this.$store.commit('authorMutations', 'newValue')
+      // this.$store.commit('authorMutations', 'newValue')
+      this.$store.commit('AUTHOR', 'newValue')
       console.log(this.$store.state.author)
     },
     action(){
