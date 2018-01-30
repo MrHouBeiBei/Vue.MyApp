@@ -8,6 +8,7 @@ import store from './vuex/store'
 
 //全局样式
 import "./components/style.css"
+import "./components/app.js"
 
 // Vue.config.productionTip = false
 // Vue.config.silent = true
