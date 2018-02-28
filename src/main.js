@@ -10,6 +10,11 @@ import store from './vuex/store'
 import "./components/style.css"
 import "./components/app.js"
 
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+
+Vue.use(MintUI)
+
 // Vue.config.productionTip = false
 // Vue.config.silent = true
 
