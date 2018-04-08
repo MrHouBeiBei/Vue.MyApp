@@ -18,6 +18,11 @@
       <mt-swipe-item>2</mt-swipe-item>
       <mt-swipe-item>3</mt-swipe-item>
     </mt-swipe>
+
+    <div>时间过滤器测试：
+      <p>{{date | dateFrm}}</p>
+      <p>{{date | dateFrm('YYYY-MM-DD')}}</p>
+    </div>
   
   </div>
 </template>
@@ -33,10 +38,12 @@
     data() {
       return {
         msg: '测试页面',
-        boyA: 1
+        boyA: 1,
+        date: ''
       }
     },
     created() {
+      this.date = new Date().getTime()
       // console.log(this.$store.state.author)
       // console.log(this.$store.getters.changeAuthor)
     },

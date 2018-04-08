@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 import store from './vuex/store'
+import filters from "./filters/index";
+
 
 //全局样式
 import "./components/style.css"
@@ -19,6 +21,10 @@ Vue.use(MintUI)
 // Vue.config.silent = true
 
 /* eslint-disable no-new */
+
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 Vue.use(Vuex)
 
