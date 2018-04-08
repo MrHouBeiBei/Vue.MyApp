@@ -17,6 +17,9 @@ import 'mint-ui/lib/style.css'
 
 Vue.use(MintUI)
 
+// 全局函数
+
+
 // Vue.config.productionTip = false
 // Vue.config.silent = true
 
@@ -25,6 +28,11 @@ Vue.use(MintUI)
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
+
+Vue.prototype.method = function() {
+  console.log('method')
+}
+
 
 Vue.use(Vuex)
 

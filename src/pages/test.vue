@@ -47,6 +47,10 @@
       // console.log(this.$store.state.author)
       // console.log(this.$store.getters.changeAuthor)
     },
+    mounted() {
+      this.method()
+      // console.log(this.method())
+    },
     methods: {
       changboyA() {
         this.boyA += 1
