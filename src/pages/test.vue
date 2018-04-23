@@ -23,6 +23,9 @@
       <p>{{date | dateFrm}}</p>
       <p>{{date | dateFrm('YYYY-MM-DD')}}</p>
     </div>
+
+    <router-link to="/login">router-link1</router-link>
+    <router-link to="/login" tag="span">router-link2</router-link>
   
   </div>
 </template>
