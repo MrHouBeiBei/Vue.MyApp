@@ -24,7 +24,7 @@ const router = new Router({
         requireAuth: false, // 添加该字段，表示进入这个路由是需要登录的
         test: true
       }
-    },
+    },    
     {
       path: "/axios",
       name: "axios测试",
@@ -42,6 +42,21 @@ const router = new Router({
       meta: {
         requireAuth: false // 添加该字段，表示进入这个路由是需要登录的
       }
+    },
+    //嵌套路由测试
+    {
+      path: "/menu",
+      name: "菜单",
+      component: () =>
+        import(/* webpackChunkName: "group-menu" */ "@/pages/menu/index.vue"),
+      children: [
+        {
+          path: "test",
+          name: "嵌套路由测试",
+          component: () =>
+            import(/* webpackChunkName: "group-menu" */ "@/pages/menu//test/test.vue"),
+        }
+      ]
     }
   ]
 });
