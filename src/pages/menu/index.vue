@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 
 // class="router-link-exact-active router-link-active"
 .router-link-active{
