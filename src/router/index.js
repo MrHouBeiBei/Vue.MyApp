@@ -11,6 +11,20 @@ Vue.use(Router);
 // export default new Router({
 const router = new Router({
   // mode: 'history',/
+
+  //滚动行为
+  scrollBehavior (to, from, savedPosition) {
+    console.log(to)
+    if(to.meta.scroll) {
+      return { x: 0, y: 50 }
+    }
+    //浏览器 前进/后退
+    // if (savedPosition) {
+    //   return savedPosition
+    // } else {
+    //   return { x: 0, y: 0 }
+    // }
+  },
   routes: [
     {
       path: "/",
@@ -56,6 +70,15 @@ const router = new Router({
           name: "嵌套路由测试",
           component: () =>
             import(/* webpackChunkName: "group-menu" */ "@/pages/menu//test/test.vue"),
+        },
+        {
+          path: "test/b",
+          name: "嵌套路由测试2",
+          component: () =>
+            import(/* webpackChunkName: "group-menu" */ "@/pages/menu//test/test2.vue"),
+          meta: {
+            scroll: true
+          }
         }
       ]
     }
@@ -68,7 +91,7 @@ router.beforeEach((to, from, next) => {
   // from: Route: 当前导航正要离开的路由
   // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
 
-  console.log(from);
+  // console.log(from);
   if (to.meta.requireAuth) {  // 判断该路由是否需要登录权限
 
     if (store.state.token) {  // 通过vuex state获取当前的token是否存在
