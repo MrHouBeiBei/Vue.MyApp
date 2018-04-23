@@ -8,6 +8,7 @@
      <!-- <router-link to="test" append>router-link3</router-link> -->
       
       <router-view></router-view>
+      <router-view name="a"></router-view>
   </div>
 </template>
 

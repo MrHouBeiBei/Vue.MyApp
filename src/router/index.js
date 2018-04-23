@@ -4,6 +4,7 @@ import store from '@/vuex/store'
 
 import Hello from "@/components/Hello";
 import test from "@/pages/test";
+import routerTest2 from "@/pages/menu//test/test2.vue";
 
 
 Vue.use(Router);
@@ -14,9 +15,9 @@ const router = new Router({
 
   //滚动行为
   scrollBehavior (to, from, savedPosition) {
-    console.log(to)
+    // console.log(to)
     if(to.meta.scroll) {
-      return { x: 0, y: 50 }
+      // return { x: 0, y: 2 }
     }
     //浏览器 前进/后退
     // if (savedPosition) {
@@ -73,9 +74,13 @@ const router = new Router({
         },
         {
           path: "test/b",
-          name: "嵌套路由测试2",
-          component: () =>
-            import(/* webpackChunkName: "group-menu" */ "@/pages/menu//test/test2.vue"),
+          // name: "嵌套路由测试2",
+          //component:   // () =>
+          // import(/* webpackChunkName: "group-menu" */ "@/pages/menu//test/test2.vue"),
+          components: {
+            default: routerTest2,
+            a: test
+          },
           meta: {
             scroll: true
           }
