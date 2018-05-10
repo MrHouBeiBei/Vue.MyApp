@@ -37,8 +37,14 @@
 <script>
   import watchTest from '../components/watchTest.vue';
   import { Toast } from 'mint-ui';
+  var mixin = {
+      created: function () {
+        console.log('混入对象的钩子被调用')
+      }
+  }
   export default {
     name: 'test',
+    mixins: [mixin],
     components: {
       'watch-test': watchTest,
     },
@@ -57,6 +63,8 @@
     mounted() {
       this.method()
       // console.log(this.method())
+      console.log(this.$msg)
+      // console.log(this.$myMethod())
     },
     methods: {
       changboyA() {

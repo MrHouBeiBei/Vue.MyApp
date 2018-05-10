@@ -8,6 +8,7 @@ import store from './vuex/store'
 import filters from "./filters/index";
 import directives from "./directives/index";
 
+import MyPlugin from "./components/myPlugin"
 
 //全局样式
 import "./components/style.css"
@@ -17,11 +18,14 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
 Vue.use(MintUI)
+Vue.use(MyPlugin)
 
 // 全局函数
 Vue.prototype.method = function() {
   console.log('method')
 }
+
+console.log('插件自定义全局属性', Vue.myGlobalData)
 
 // Vue.config.productionTip = false
 // Vue.config.silent = true
