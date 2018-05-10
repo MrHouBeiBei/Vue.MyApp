@@ -9,6 +9,8 @@ import filters from "./filters/index";
 import directives from "./directives/index";
 
 import MyPlugin from "./components/myPlugin"
+import toastPlugin from "./components/toastPlugin"
+import "./components/toastPlugin.less"
 
 //全局样式
 import "./components/style.css"
@@ -19,6 +21,7 @@ import 'mint-ui/lib/style.css'
 
 Vue.use(MintUI)
 Vue.use(MyPlugin)
+Vue.use(toastPlugin)
 
 // 全局函数
 Vue.prototype.method = function() {

@@ -29,7 +29,9 @@
     <router-link to="/login" tag="span">router-link2</router-link>  
 
     <h4>自定义指令</h4>
-    <input type="text" placeholder="自当以指令自动聚焦" v-focus>
+    <input type="text" placeholder="自当以指令自动聚焦" v-focus v-test="'test'">
+    <h4>自定义插件toast</h4>
+    <input type="button" value="toast" @click="toastClick">
   
   </div>
 </template>
@@ -37,6 +39,7 @@
 <script>
   import watchTest from '../components/watchTest.vue';
   import { Toast } from 'mint-ui';
+
   var mixin = {
       created: function () {
         console.log('混入对象的钩子被调用')
@@ -53,6 +56,15 @@
         msg: '测试页面',
         boyA: 1,
         date: ''
+      }
+    },
+    // 局部指令
+    directives: {
+      test: {
+        inserted(el, binding) {
+          // console.log(el)
+          console.log('指令value', binding)
+        },
       }
     },
     created() {
@@ -95,6 +107,9 @@
           position: 'bottom',
           duration: 5000
         });
+      },
+      toastClick() {
+        this.$toast('自定义toast插件测试')
       }
     }
   }
