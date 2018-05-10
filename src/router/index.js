@@ -4,8 +4,6 @@ import store from '@/vuex/store'
 
 import Hello from "@/components/Hello";
 import test from "@/pages/test";
-import routerTest2 from "@/pages/menu//test/test2.vue";
-
 
 Vue.use(Router);
 
@@ -70,7 +68,7 @@ const router = new Router({
           path: "test",
           name: "嵌套路由测试",
           component: () =>
-            import(/* webpackChunkName: "group-menu" */ "@/pages/menu//test/test.vue"),
+            import(/* webpackChunkName: "group-menu" */ "@/pages/menu/test/test.vue"),
         },
         {
           path: "test/b",
@@ -78,7 +76,8 @@ const router = new Router({
           //component:   // () =>
           // import(/* webpackChunkName: "group-menu" */ "@/pages/menu//test/test2.vue"),
           components: {
-            default: routerTest2,
+            default: () =>
+            import(/* webpackChunkName: "group-menu" */ "@/pages/menu/test/test2.vue"),
             a: test
           },
           meta: {

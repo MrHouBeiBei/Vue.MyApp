@@ -25,7 +25,11 @@
     </div>
 
     <router-link to="/login">router-link1</router-link>
-    <router-link to="/login" tag="span">router-link2</router-link>
+    <!-- 显示为span标签 -->
+    <router-link to="/login" tag="span">router-link2</router-link>  
+
+    <h4>自定义指令</h4>
+    <input type="text" placeholder="自当以指令自动聚焦" v-focus>
   
   </div>
 </template>

@@ -8,6 +8,7 @@
      <!-- <router-link to="test" append>router-link3</router-link> -->
       
       <router-view></router-view>
+      <!-- 可在路由中指定显示组件 -->
       <router-view name="a"></router-view>
   </div>
 </template>
