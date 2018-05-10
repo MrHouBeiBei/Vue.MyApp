@@ -29,9 +29,11 @@
     <router-link to="/login" tag="span">router-link2</router-link>  
 
     <h4>自定义指令</h4>
-    <input type="text" placeholder="自当以指令自动聚焦" v-focus v-test="'test'">
+    <input type="text" placeholder="自定义指令自动聚焦" v-focus v-test="'test'">
     <h4>自定义插件toast</h4>
     <input type="button" value="toast" @click="toastClick">
+    <h4>Velocity动画库</h4>
+    <div class="element" ref="animate"></div>
   
   </div>
 </template>
@@ -39,7 +41,7 @@
 <script>
   import watchTest from '../components/watchTest.vue';
   import { Toast } from 'mint-ui';
-
+  import Velocity from 'velocity-animate'
   var mixin = {
       created: function () {
         console.log('混入对象的钩子被调用')
@@ -77,6 +79,7 @@
       // console.log(this.method())
       console.log(this.$msg)
       // console.log(this.$myMethod())
+      this.animate()
     },
     methods: {
       changboyA() {
@@ -110,6 +113,11 @@
       },
       toastClick() {
         this.$toast('自定义toast插件测试')
+      },
+      animate() {
+        // Velocity($('.element'), {width: '200px', height: '200px'}, 500)
+        Velocity(this.$refs.animate, 
+        { width: '100px', height: '100px', opacity: 0.5}, {duration: 4000, delay: 1000})
       }
     }
   }
@@ -120,6 +128,12 @@
 <style lang="less" scoped>
   .lessTest {
     font-size: 50/2px
+  }
+
+  .element{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
   }
 
 </style>

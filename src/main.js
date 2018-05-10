@@ -11,6 +11,9 @@ import directives from "./directives/index";
 import MyPlugin from "./components/myPlugin"
 import toastPlugin from "./components/toastPlugin"
 import "./components/toastPlugin.less"
+// import  Velocity from 'velocity-animate'
+// import 'velocity-animate/velocity.ui.js'
+
 
 //全局样式
 import "./components/style.css"
@@ -19,9 +22,12 @@ import "./components/app.js"
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
+
 Vue.use(MintUI)
 Vue.use(MyPlugin)
 Vue.use(toastPlugin)
+// Vue.use(Velocity)
+
 
 // 全局函数
 Vue.prototype.method = function() {
