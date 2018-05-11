@@ -6,6 +6,13 @@ import router from './router'
 import Vuex from 'vuex'
 import store from './vuex/store'
 import filters from "./filters/index";
+import directives from "./directives/index";
+
+import MyPlugin from "./components/myPlugin"
+import toastPlugin from "./components/toastPlugin"
+import "./components/toastPlugin.less"
+// import  Velocity from 'velocity-animate'
+// import 'velocity-animate/velocity.ui.js'
 
 
 //全局样式
@@ -15,12 +22,19 @@ import "./components/app.js"
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
+
 Vue.use(MintUI)
+Vue.use(MyPlugin)
+Vue.use(toastPlugin)
+// Vue.use(Velocity)
+
 
 // 全局函数
 Vue.prototype.method = function() {
   console.log('method')
 }
+
+console.log('插件自定义全局属性', Vue.myGlobalData)
 
 // Vue.config.productionTip = false
 // Vue.config.silent = true
@@ -30,6 +44,8 @@ Vue.prototype.method = function() {
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
+
+Object.keys(directives).forEach( key => Vue.directive(key, directives[key]))
 
 Vue.use(Vuex)
 
