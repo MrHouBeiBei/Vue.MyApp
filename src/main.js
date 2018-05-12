@@ -11,7 +11,7 @@ import directives from "./directives/index";
 import MyPlugin from "./components/myPlugin"
 import toastPlugin from "./components/toastPlugin"
 import "./components/toastPlugin.less"
-// import  Velocity from 'velocity-animate'
+import  Velocity from 'velocity-animate'
 // import 'velocity-animate/velocity.ui.js'
 
 

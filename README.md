@@ -37,4 +37,5 @@ npm install --save-dev node-sass
 
 #Velocity
 安装  npm install velocity-animate --save
-页面引入： import  Velocity from 'velocity-animate'
+全局引入 或 页面引入： import  Velocity from 'velocity-animate'
+文档：http://www.mrfront.com/docs/velocity.js/index.html

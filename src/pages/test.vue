@@ -41,7 +41,7 @@
 <script>
   import watchTest from '../components/watchTest.vue';
   import { Toast } from 'mint-ui';
-  import Velocity from 'velocity-animate'
+  // import Velocity from 'velocity-animate'
   var mixin = {
       created: function () {
         console.log('混入对象的钩子被调用')
@@ -115,9 +115,8 @@
         this.$toast('自定义toast插件测试')
       },
       animate() {
-        // Velocity($('.element'), {width: '200px', height: '200px'}, 500)
         Velocity(this.$refs.animate, 
-        { width: '100px', height: '100px', opacity: 0.5}, {duration: 4000, delay: 1000})
+        { width: '100px', height: '100px', opacity: 0.5}, {duration: 4000, delay: 1000, loop: true})
       }
     }
   }
@@ -131,8 +130,8 @@
   }
 
   .element{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background-color: pink;
   }
 
