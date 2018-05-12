@@ -40,6 +40,12 @@ const router = new Router({
       }
     },    
     {
+      path: "/data",
+      name: "响应式属性测试",
+      component: () =>
+      import(/* webpackChunkName: "group-data" */ "@/pages/data/index.vue"),
+    },   
+    {
       path: "/axios",
       name: "axios测试",
       component: () =>
