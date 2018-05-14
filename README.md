@@ -39,3 +39,13 @@ npm install --save-dev node-sass
 安装  npm install velocity-animate --save
 全局引入 或 页面引入： import  Velocity from 'velocity-animate'
 文档：http://www.mrfront.com/docs/velocity.js/index.html
+
+#comiit规范
+Commitizen工具
+npm install -g commitizen
+commitizen init cz-conventional-changelog --save --save-exact
+package配置：
+"script": {
+    "commit": "git cz"
+}
+git commit命令，改为使用git cz
