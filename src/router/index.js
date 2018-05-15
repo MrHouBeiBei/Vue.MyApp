@@ -44,10 +44,16 @@ const router = new Router({
       name: "响应式属性测试",
       component: () =>
       import(/* webpackChunkName: "group-data" */ "@/pages/data/index.vue"),
-    },   
+    },
+    {
+      path: "/animation",
+      name: "过度&动画",
+      component: () =>
+      import(/* webpackChunkName: "group-animation" */ "@/pages/animation/index.vue"),
+    },      
     {
       path: "/axios",
-      name: "axios测试",
+      name: "axios测试&promise",
       component: () =>
         import(/* webpackChunkName: "group-axios" */ "@/pages/axios.vue"),
       meta: {

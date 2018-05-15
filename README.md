@@ -40,6 +40,9 @@ npm install --save-dev node-sass
 全局引入 或 页面引入： import  Velocity from 'velocity-animate'
 文档：http://www.mrfront.com/docs/velocity.js/index.html
 
+#animate.css
+
+
 #comiit规范
 Commitizen工具
 npm install -g commitizen
