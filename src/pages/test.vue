@@ -34,12 +34,19 @@
     <input type="button" value="toast" @click="toastClick">
     <h4>Velocity动画库</h4>
     <div class="element" ref="animate"></div>
+
+    <h4>子组件响应式数据测试</h4>
+    <input type="button" value="改变数据" @click="addData">
+    <div v-if="dataTestShow">
+      <data-test :testData="cdata"></data-test>
+    </div>
   
   </div>
 </template>
 
 <script>
   import watchTest from '../components/watchTest.vue';
+  import dataTest from '../components/dataTest.vue';
   import { Toast } from 'mint-ui';
   // import Velocity from 'velocity-animate'
   var mixin = {
@@ -52,12 +59,15 @@
     mixins: [mixin],
     components: {
       'watch-test': watchTest,
+      dataTest
     },
     data() {
       return {
         msg: '测试页面',
         boyA: 1,
-        date: ''
+        date: '',
+        cdata: 2,
+        dataTestShow: true
       }
     },
     // 局部指令
@@ -117,6 +127,11 @@
       animate() {
         Velocity(this.$refs.animate, 
         { width: '100px', height: '100px', opacity: 0.5}, {duration: 4000, delay: 1000, loop: true})
+      },
+      addData() {
+        this.cdata += 2
+        this.dataTestShow = false
+        this.dataTestShow = true
       }
     }
   }
