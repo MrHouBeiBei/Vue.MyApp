@@ -30,10 +30,10 @@ npm test
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 # 配置sass
-电脑需装 Ruby
+电脑需装 Ruby 或 python
 npm install --save-dev sass-loader
 //sass-loader依赖于node-sass
-npm install --save-dev node-sass
+npm install --save-dev node-sass    要单独执行一次，当中会下载其他依赖
 
 #Velocity
 安装  npm install velocity-animate --save
