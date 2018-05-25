@@ -20,6 +20,9 @@ import "./components/toastPlugin.less"
 import  Velocity from 'velocity-animate'  //动画
 // import 'velocity-animate/velocity.ui.js'
 
+import vueUtil from "./components/vueUtil"  
+
+
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
@@ -28,10 +31,14 @@ Vue.use(MyPlugin)
 Vue.use(toastPlugin)
 // Vue.use(Velocity)
 
+Vue.use(vueUtil)
 
 // 全局函数
 Vue.prototype.method = function() {
-  console.log('method')
+  console.log('全局函数 vue.prototype method')
+}
+Vue.prototype.method2 = function() {
+  console.log('全局函数 vue.prototype method2')
 }
 
 console.log('插件自定义全局属性', Vue.myGlobalData)

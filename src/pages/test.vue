@@ -80,6 +80,9 @@
       }
     },
     created() {
+      this.method()
+      this.method2()
+      this.method3()
       this.date = new Date().getTime()
       // console.log(this.$store.state.author)
       // console.log(this.$store.getters.changeAuthor)
