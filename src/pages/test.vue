@@ -40,6 +40,10 @@
     <div v-if="dataTestShow">
       <data-test :testData="cdata"></data-test>
     </div>
+    <h4>vuex响应式数据测试</h4>
+    <input type="button" value="改变列表" @click="changePersons">
+    <input type="button" value="重新commit列表2" @click="changePersons2">
+    <vuex-test></vuex-test>
   
   </div>
 </template>
@@ -47,7 +51,9 @@
 <script>
   import watchTest from '../components/watchTest.vue';
   import dataTest from '../components/dataTest.vue';
+  import vuexTest from '../components/vuexTest.vue';
   import { Toast } from 'mint-ui';
+  import { PERSONS }  from '../vuex/mutations-type';
   // import Velocity from 'velocity-animate'
   var mixin = {
       created: function () {
@@ -59,7 +65,8 @@
     mixins: [mixin],
     components: {
       'watch-test': watchTest,
-      dataTest
+      dataTest,
+      vuexTest
     },
     data() {
       return {
@@ -135,6 +142,26 @@
         this.cdata += 2
         this.dataTestShow = false
         this.dataTestShow = true
+      },
+
+      /**
+       * vuex中存储的变量在个组件中是响应式的
+       */
+      changePersons() {
+        this.$store.state.persons.push({id:3, name: '小张'})
+      },
+      changePersons2() {
+        var list = [
+          {
+            id: 1,
+            name: '太阳'
+          },
+          {
+            id: 2,
+            name: '月亮'
+          }
+        ]
+        this.$store.commit( PERSONS , list)
       }
     }
   }

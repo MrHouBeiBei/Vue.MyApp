@@ -1,5 +1,5 @@
 import store from "./store";
-import { AUTHOR, SET_TOKEN } from "./mutations-type";
+import { AUTHOR, SET_TOKEN, PERSONS } from "./mutations-type";
 
 const mutations = {
     // authorMutations(state, data) {
@@ -13,6 +13,9 @@ const mutations = {
     },
     [SET_TOKEN](state, data) {
         state.token = data
+    },
+    [PERSONS](state, data) {
+        state.persons = data
     }
 }
 
