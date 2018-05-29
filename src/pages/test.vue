@@ -43,8 +43,15 @@
     <h4>vuex响应式数据测试</h4>
     <input type="button" value="改变列表" @click="changePersons">
     <input type="button" value="重新commit列表2" @click="changePersons2">
-    <vuex-test></vuex-test>
-  
+    <vuex-test></vuex-test>    
+
+    <h4>插槽组件</h4>
+    <slot-test>
+      <!-- 123 -->
+      <template slot="one">
+        插槽一
+      </template>
+    </slot-test>
   </div>
 </template>
 
@@ -52,6 +59,7 @@
   import watchTest from '../components/watchTest.vue';
   import dataTest from '../components/dataTest.vue';
   import vuexTest from '../components/vuexTest.vue';
+  import slotTest from '../components/slotTest.vue';
   import { Toast } from 'mint-ui';
   import { PERSONS }  from '../vuex/mutations-type';
   // import Velocity from 'velocity-animate'
@@ -66,7 +74,8 @@
     components: {
       'watch-test': watchTest,
       dataTest,
-      vuexTest
+      vuexTest,
+      slotTest
     },
     data() {
       return {

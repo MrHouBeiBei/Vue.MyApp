@@ -35,6 +35,13 @@ npm install --save-dev sass-loader
 //sass-loader依赖于node-sass
 npm install --save-dev node-sass    要单独执行一次，当中会下载其他依赖
 
+```
+scss全局变量文件使用方式
+    引入要使用文件  @import ''
+    后缀名可以省略
+    文件名开头 _style.css  引入 './style'  (_ 引入方式不会生成新css文件)
+```
+
 #Velocity
 安装  npm install velocity-animate --save
 全局引入 或 页面引入： import  Velocity from 'velocity-animate'
@@ -52,3 +59,7 @@ package配置：
     "commit": "git cz"
 }
 git commit命令，改为使用git cz
+
+
+## zone.js
+上下文环境变量
