@@ -43,6 +43,14 @@
     <input type="button" value="重新commit列表2" @click="changePersons2">
     <vuex-test></vuex-test>
 
+    <h4>插槽组件</h4>
+    <slot-test>
+      <!-- 123 -->
+      <template slot="one">
+        插槽一
+      </template>
+    </slot-test>
+
     <h4>web响应式适配测试</h4>
     <span class="rem-test">rem</span>
 
@@ -52,7 +60,6 @@
       <div class="vw-b">vw</div>
     </div>
 
-
   </div>
 </template>
 
@@ -60,6 +67,7 @@
   import watchTest from '../components/watchTest.vue';
   import dataTest from '../components/dataTest.vue';
   import vuexTest from '../components/vuexTest.vue';
+  import slotTest from '../components/slotTest.vue';
   import {
     Toast
   } from 'mint-ui';
@@ -78,7 +86,8 @@
     components: {
       'watch-test': watchTest,
       dataTest,
-      vuexTest
+      vuexTest,
+      slotTest
     },
     data() {
       return {
