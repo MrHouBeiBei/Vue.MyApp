@@ -28,8 +28,60 @@
       </transition>
     </div>
 
+    <h4>Velocity动画库</h4>
+    <div class="element" ref="animate"></div>
+
   </div>
 </template>
+
+
+
+<script>
+  export default {
+    data() {
+      return {
+        show: true,
+        show2: true,
+        show3: true,
+      }
+    },
+    created() {
+
+    },
+    mounted() {
+      //  this.$refs['animation'].addEventListener('animationend', function() { //该方法会多次触发
+      //自定义类名使用animatess.css会多次触发
+      // window.addEventListener('animationend', function () {  
+      //   console.log('动画完成')
+      // })
+      this.animate()
+    },
+    methods: {
+      animationend() {
+        console.log('动画完成2')
+      },
+      transitionend() {
+        console.log('自定义类名动画完成')
+      },
+
+      animate() {
+        Velocity(this.$refs.animate, 
+        {
+          width: '100px', 
+          height: '100px',
+          opacity: 0.5
+        }, 
+        {
+          duration: 4000,
+          delay: 1000,
+          loop: true
+        })
+      }
+    }
+  }
+
+</script>
+
 
 <style lang="less" scoped>
   .p1 {
@@ -72,36 +124,10 @@
     }
   }
 
-</style>
-
-<script>
-  export default {
-    data() {
-      return {
-        show: true,
-        show2: true,
-        show3: true,
-      }
-    },
-    created() {
-
-    },
-    mounted() {
-      //  this.$refs['animation'].addEventListener('animationend', function() { //该方法会多次触发
-      //自定义类名使用animatess.css会多次触发
-      // window.addEventListener('animationend', function () {  
-      //   console.log('动画完成')
-      // })
-    },
-    methods: {
-      animationend() {
-        console.log('动画完成2')
-      },
-      transitionend() {
-        console.log('自定义类名动画完成')
-      }
-    }
+  .element {
+    width: 150px;
+    height: 150px;
+    background-color: pink;
   }
 
-</script>
-
+</style>

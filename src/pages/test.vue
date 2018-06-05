@@ -26,14 +26,12 @@
 
     <router-link to="/login">router-link1</router-link>
     <!-- 显示为span标签 -->
-    <router-link to="/login" tag="span">router-link2</router-link>  
+    <router-link to="/login" tag="span">router-link2</router-link>
 
     <h4>自定义指令</h4>
     <input type="text" placeholder="自定义指令自动聚焦" v-focus v-test="'test'">
     <h4>自定义插件toast</h4>
     <input type="button" value="toast" @click="toastClick">
-    <h4>Velocity动画库</h4>
-    <div class="element" ref="animate"></div>
 
     <h4>子组件响应式数据测试</h4>
     <input type="button" value="改变数据" @click="addData">
@@ -44,7 +42,17 @@
     <input type="button" value="改变列表" @click="changePersons">
     <input type="button" value="重新commit列表2" @click="changePersons2">
     <vuex-test></vuex-test>
-  
+
+    <h4>web响应式适配测试</h4>
+    <span class="rem-test">rem</span>
+
+    <h4>vh、vw</h4>
+    <div>
+      <div class="vw-a">vw</div>
+      <div class="vw-b">vw</div>
+    </div>
+
+
   </div>
 </template>
 
@@ -52,13 +60,17 @@
   import watchTest from '../components/watchTest.vue';
   import dataTest from '../components/dataTest.vue';
   import vuexTest from '../components/vuexTest.vue';
-  import { Toast } from 'mint-ui';
-  import { PERSONS }  from '../vuex/mutations-type';
+  import {
+    Toast
+  } from 'mint-ui';
+  import {
+    PERSONS
+  } from '../vuex/mutations-type';
   // import Velocity from 'velocity-animate'
   var mixin = {
-      created: function () {
-        console.log('混入对象的钩子被调用')
-      }
+    created: function () {
+      console.log('混入对象的钩子被调用')
+    }
   }
   export default {
     name: 'test',
@@ -99,7 +111,6 @@
       // console.log(this.method())
       console.log(this.$msg)
       // console.log(this.$myMethod())
-      this.animate()
     },
     methods: {
       changboyA() {
@@ -134,10 +145,7 @@
       toastClick() {
         this.$toast('自定义toast插件测试')
       },
-      animate() {
-        Velocity(this.$refs.animate, 
-        { width: '100px', height: '100px', opacity: 0.5}, {duration: 4000, delay: 1000, loop: true})
-      },
+
       addData() {
         this.cdata += 2
         this.dataTestShow = false
@@ -148,11 +156,13 @@
        * vuex中存储的变量在个组件中是响应式的
        */
       changePersons() {
-        this.$store.state.persons.push({id:3, name: '小张'})
+        this.$store.state.persons.push({
+          id: 3,
+          name: '小张'
+        })
       },
       changePersons2() {
-        var list = [
-          {
+        var list = [{
             id: 1,
             name: '太阳'
           },
@@ -161,7 +171,7 @@
             name: '月亮'
           }
         ]
-        this.$store.commit( PERSONS , list)
+        this.$store.commit(PERSONS, list)
       }
     }
   }
@@ -174,9 +184,24 @@
     font-size: 50/2px
   }
 
-  .element{
+  .element {
     width: 150px;
     height: 150px;
+    background-color: pink;
+  }
+
+  .rem-test {
+    font-size: 0.4rem;
+  } //vh、vw
+  .vw-a {
+    display: inline-block;
+    width: 80vw;
+    background-color: pink;
+  }
+
+  .vw-b {
+    display: inline-block;
+    width: 20vw;
     background-color: pink;
   }
 
