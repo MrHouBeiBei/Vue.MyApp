@@ -48,7 +48,7 @@
 
 <style lang="scss" scoped>
   // @import './common.scss';
-  @import './common';
+  @import './common';   //没写 _ 不会生成新文件
   span {
     color: $color-pink
   }

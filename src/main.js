@@ -12,6 +12,7 @@ import directives from "./directives/index";
 import "./components/style.css"
 import "./components/animate.css"
 import "./components/app.js"
+// import "./components/_common.scss"
 
 // 插件
 import MyPlugin from "./components/myPlugin"

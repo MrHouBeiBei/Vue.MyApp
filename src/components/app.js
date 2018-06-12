@@ -1,23 +1,23 @@
-(function (doc, win) {
-  var docEl = doc.documentElement,
-    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-    recalc = function () {
-      var clientWidth = docEl.clientWidth;
-      if (!clientWidth) return;
-      if (clientWidth < 1024) {
-        //   docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';  
-        docEl.style.fontSize = 100 * (clientWidth / 375) + 'px'; //rem相对于根元素
-      } else {
-        docEl.style.fontSize = 34.13 + 'px'
-      }
-      document.body.style.fontSize = '20px';
-      // console.log(clientWidth);
-      // console.log(docEl.style.fontSize);
-    };
-  if (!doc.addEventListener) return;
-  win.addEventListener(resizeEvt, recalc, false);
-  doc.addEventListener('DOMContentLoaded', recalc, false);
-})(document, window);
+// (function (doc, win) {
+//   var docEl = doc.documentElement,
+//     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+//     recalc = function () {
+//       var clientWidth = docEl.clientWidth;
+//       if (!clientWidth) return;
+//       if (clientWidth < 1024) {
+//         //   docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';  
+//         docEl.style.fontSize = 100 * (clientWidth / 375) + 'px'; //rem相对于根元素
+//       } else {
+//         docEl.style.fontSize = 34.13 + 'px'
+//       }
+//       document.body.style.fontSize = '20px';
+//       // console.log(clientWidth);
+//       // console.log(docEl.style.fontSize);
+//     };
+//   if (!doc.addEventListener) return;
+//   win.addEventListener(resizeEvt, recalc, false);
+//   doc.addEventListener('DOMContentLoaded', recalc, false);
+// })(document, window);
 
 
 

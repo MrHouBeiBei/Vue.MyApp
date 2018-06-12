@@ -3,6 +3,8 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
+// var variables = require('../src/components/_common.scss')
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -74,7 +76,27 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
+
+      //scss sass
+      // {
+      //   // test: /\.sass$/,
+      //   test: /\.scss$/,
+      //   use: [
+      //     'vue-style-loader',
+      //     'css-loader',
+      //     {
+      //       loader: 'sass-loader',
+      //       options: {
+      //         // indentedSyntax: true,
+      //         // 你也可以从一个文件读取，例如 `variables.scss`
+      //         data: `$color-pink: pink;`
+      //         // data: variables
+      //       }
+      //     }
+      //   ]
+      // }
+
     ]
   }
 }
