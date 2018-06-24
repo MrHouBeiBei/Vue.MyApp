@@ -26,13 +26,25 @@ import vueUtil from "./components/vueUtil"
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(MintUI)
+Vue.use(ElementUI)
 Vue.use(MyPlugin)
 Vue.use(toastPlugin)
 // Vue.use(Velocity)
 
 Vue.use(vueUtil)
+
+/**
+ * element start
+ */
+import { Message } from 'element-ui';
+Vue.prototype.$_Message = Message;
+/**
+ * element end
+ */
 
 // 全局函数
 Vue.prototype.method = function() {

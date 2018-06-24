@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>App.vue</h2>
+    <!-- <h2>App.vue</h2> -->
     <!-- <img src="./assets/logo.png"> -->
     <router-view></router-view>
   </div>
@@ -13,6 +13,10 @@ export default {
 </script>
 
 <style lang="scss">
+
+#app{
+  height: 100%;
+}
 
 $color-pink: pink;
 
