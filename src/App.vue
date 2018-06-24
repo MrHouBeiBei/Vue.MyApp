@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <h2>App.vue</h2> -->
+    <h2>App.vue</h2>
     <!-- <img src="./assets/logo.png"> -->
     <router-view></router-view>
   </div>
@@ -15,6 +15,13 @@ export default {
 <style lang="scss">
 
 $color-pink: pink;
+
+// sass嵌套 & 是当前外层元素
+h2{
+  #app>& {
+    color: blue;
+  }
+}
 
 // </style>
 

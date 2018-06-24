@@ -13,7 +13,8 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
+// <style lang="scss" scoped>
 
 .box{
   height: 2000px
