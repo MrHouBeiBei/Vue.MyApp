@@ -7,15 +7,19 @@
         if (!clientWidth) return;
         // 以1024设计图为标准时
         // pc
-        if(clientWidth > 1024) {  
+        if(clientWidth >= 1200) {  
             docEl.style.fontSize = 100 * (clientWidth / 1024) + 'px'; //rem相对于根元素
         }
+        /* 中等屏幕（桌面显示器，大于等于 992px） */
+        if(clientWidth < 1200 && clientWidth >= 992) {
+            docEl.style.fontSize = 100 * (clientWidth / 1024-10) + 'px'; //rem相对于根元素
+        }
         // 平板
-        if(clientWidth <= 1024 && clientWidth > 736) {
+        if(clientWidth < 992 && clientWidth >= 768) {
             docEl.style.fontSize = 100 * (clientWidth / 1024-25) + 'px'; //rem相对于根元素
         }
         // 手机
-        if (clientWidth <= 736) {
+        if (clientWidth < 768) {
           docEl.style.fontSize = 100 * (clientWidth /  1024-90) + 'px'; //rem相对于根元素
         } 
 

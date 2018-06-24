@@ -5,8 +5,9 @@
         header
       </el-header>
       <el-container class="main-container">
-        <el-aside class="aside" style="background-color: rgb(39,43,46)">
-          menu
+        <!-- <el-aside class="aside" style="background-color: rgb(39,43,46)"> -->
+        <el-aside class="aside">
+            <aside-menu></aside-menu>
         </el-aside>
         <el-container>
           <el-main>main</el-main>
@@ -18,7 +19,11 @@
 </template>
 
 <script>
+  import asideMenu from './aside.vue'
   export default {
+    components: {
+        asideMenu
+    },
     data() {
       return {
 
@@ -35,19 +40,18 @@
 
 
 <style lang="less" scoped>
-// .nav-box{
-//     height: 100%;
-// }
-.all-container{
-    height:calc(100vh);
-    color: #FFF;
-    // height: 100%;
-}
-  .main-container {
-    height:calc(100vh-60px);
-    // height:100%-60px;
+  // .nav-box{
+  //     height: 100%;
+  // }
+  .all-container {
+    height: calc(100vh);
+    color: #FFF; // height: 100%;
   }
 
-//   .aside {
-//   }
+  .main-container {
+    height: calc(100vh-60px); // height:100%-60px;
+  }
+
+  //   .aside {
+  //   }
 </style>
