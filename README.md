@@ -29,7 +29,7 @@ npm test
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-# 配置sass
+## 配置sass
 电脑需装 Ruby 或 python
 npm install --save-dev sass-loader
 //sass-loader依赖于node-sass
@@ -42,15 +42,15 @@ scss全局变量文件使用方式
     文件名开头 _style.css  引入 './style'  (_ 引入方式不会生成新css文件)
 ```
 
-#Velocity
+## Velocity
 安装  npm install velocity-animate --save
 全局引入 或 页面引入： import  Velocity from 'velocity-animate'
 文档：http://www.mrfront.com/docs/velocity.js/index.html
 
-#animate.css
+## animate.css
 
 
-#comiit规范
+## comiit规范
 Commitizen工具
 npm install -g commitizen
 commitizen init cz-conventional-changelog --save --save-exact
