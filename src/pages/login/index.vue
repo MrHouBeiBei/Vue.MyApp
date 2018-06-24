@@ -56,9 +56,6 @@
           case 13:
             this.login()
             break;
-          // case 83:
-          //   $("#btnUpload").click();
-          //   break;
           default:
             break;
         }
@@ -78,7 +75,7 @@
           type: 'success'
         });
         this.$store.commit(SET_TOKEN, true); //改变token状态
-        let redirect = decodeURIComponent(this.$route.query.redirect || '/test'); //获取登录成功后要跳转的路由。
+        let redirect = decodeURIComponent(this.$route.query.redirect || '/nav'); //获取登录成功后要跳转的路由。
         this.$router.push({
           path: redirect
         })

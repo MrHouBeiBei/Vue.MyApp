@@ -1,3 +1,37 @@
+
+(function (doc, win) {
+    var docEl = doc.documentElement,
+      resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
+        // 以1024设计图为标准时
+        // pc
+        if(clientWidth > 1024) {  
+            docEl.style.fontSize = 100 * (clientWidth / 1024) + 'px'; //rem相对于根元素
+        }
+        // 平板
+        if(clientWidth <= 1024 && clientWidth > 736) {
+            docEl.style.fontSize = 100 * (clientWidth / 1024-25) + 'px'; //rem相对于根元素
+        }
+        // 手机
+        if (clientWidth <= 736) {
+          docEl.style.fontSize = 100 * (clientWidth /  1024-90) + 'px'; //rem相对于根元素
+        } 
+
+        // else {
+        //   docEl.style.fontSize = 34.13 + 'px'
+        // }
+        // document.body.style.fontSize = '16px';
+        document.body.style.fontSize = '0.14rem';
+        console.log(clientWidth);
+      };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+  })(document, window);
+
+
 // (function (doc, win) {
 //   var docEl = doc.documentElement,
 //     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
