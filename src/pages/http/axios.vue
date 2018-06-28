@@ -7,8 +7,8 @@
 </template>
 
 <script>
-  import http from '../utils/http'
-  import api from '../utils/api'
+  import http from '../../utils/http'
+  import api from '../../utils/api'
   export default {
     name: 'hello',
     data() {

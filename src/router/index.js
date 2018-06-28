@@ -31,15 +31,15 @@ const router = new Router({
       // name: "Hello",
       // component: Hello
     },
-    {
-      path: "/test",
-      name: "test",
-      component: test,
-      meta: {
-        requireAuth: false, // 添加该字段，表示进入这个路由是需要登录的
-        test: true
-      }
-    },    
+    // {
+    //   path: "/test",
+    //   name: "test",
+    //   component: test,
+    //   meta: {
+    //     requireAuth: false, // 添加该字段，表示进入这个路由是需要登录的
+    //     test: true
+    //   }
+    // },    
     {
       path: "/data",
       name: "响应式属性测试",
@@ -52,15 +52,15 @@ const router = new Router({
       component: () =>
       import(/* webpackChunkName: "group-animation" */ "@/pages/animation/index.vue"),
     },      
-    {
-      path: "/axios",
-      name: "axios测试&promise",
-      component: () =>
-        import(/* webpackChunkName: "group-axios" */ "@/pages/axios.vue"),
-      meta: {
-        requireAuth: true // 添加该字段，表示进入这个路由是需要登录的
-      }
-    },
+    // {
+    //   path: "/axios",
+    //   name: "axios测试&promise",
+    //   component: () =>
+    //     import(/* webpackChunkName: "group-axios" */ "@/pages/http/axios.vue"),
+    //   meta: {
+    //     requireAuth: true // 添加该字段，表示进入这个路由是需要登录的
+    //   }
+    // },
     {
       path: "/login",
       name: "登陆",
@@ -106,6 +106,26 @@ const router = new Router({
       name: "导航",
       component: () =>
         import(/* webpackChunkName: "group-menu" */ "@/pages/menu/main.vue"),
+        children: [
+          {
+            path: "/axios",
+            name: "axios测试&promise",
+            component: () =>
+              import(/* webpackChunkName: "group-axios" */ "@/pages/http/axios.vue"),
+            meta: {
+              requireAuth: true // 添加该字段，表示进入这个路由是需要登录的
+            }
+          },
+          {
+            path: "/test",
+            name: "test",
+            component: test,
+            meta: {
+              requireAuth: false, // 添加该字段，表示进入这个路由是需要登录的
+              test: true
+            }
+          },   
+        ],
     }
     
 

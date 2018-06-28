@@ -28,7 +28,7 @@
         // }
         // document.body.style.fontSize = '16px';
         document.body.style.fontSize = '0.14rem';
-        console.log(clientWidth);
+        // console.log(clientWidth);
       };
     if (!doc.addEventListener) return;
     win.addEventListener(resizeEvt, recalc, false);
