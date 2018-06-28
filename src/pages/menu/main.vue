@@ -10,7 +10,9 @@
             <aside-menu></aside-menu>
         </el-aside>
         <el-container>
-          <el-main>main</el-main>
+          <el-main>
+            <router-view></router-view>
+          </el-main>
           <el-footer style="background-color: rgb(55,61,65)">footer</el-footer>
         </el-container>
       </el-container>
@@ -45,7 +47,7 @@
   // }
   .all-container {
     height: calc(100vh);
-    color: #FFF; // height: 100%;
+    // color: #FFF; // height: 100%;
   }
 
   .main-container {
