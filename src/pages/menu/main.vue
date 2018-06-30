@@ -24,7 +24,7 @@
   import asideMenu from './aside.vue'
   export default {
     components: {
-        asideMenu
+        asideMenu,
     },
     data() {
       return {

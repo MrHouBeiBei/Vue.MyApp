@@ -7,6 +7,7 @@ import Vuex from 'vuex'
 import store from './vuex/store'
 import filters from "./filters/index";
 import directives from "./directives/index";
+import globalComponents from "@/components/globalComponents";
 
 //全局
 import "./components/style.css"
@@ -63,6 +64,10 @@ console.log('插件自定义全局属性', Vue.myGlobalData)
 
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
+})
+
+Object.keys(globalComponents).forEach(key => {
+  Vue.component(key, globalComponents[key])
 })
 
 Object.keys(directives).forEach( key => Vue.directive(key, directives[key]))
