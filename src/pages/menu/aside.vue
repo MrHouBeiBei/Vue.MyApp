@@ -45,7 +45,7 @@
               index: '1-4',
               path: {path: 'axios'}
             },{
-              name: '全局可枚举属性',
+              name: '全局属性',
               index: '1-5',
               path: {path: 'globalProperty'}
             }]

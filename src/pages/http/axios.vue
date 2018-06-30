@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <h-breadcrumb :list="readcrumbList"></h-breadcrumb>
     <h1>{{ msg }}</h1>
     <input type="button" value="promise" @click="clickFn">
     <input type="button" value="tryCatch" @click="clickFn2">
@@ -13,6 +14,14 @@
     name: 'hello',
     data() {
       return {
+        readcrumbList: [
+          {
+            name: 'vue',
+          },
+          {
+            name: 'axios',
+          }
+        ],
         msg: 'Welcome to Your Vue.js axios'
       }
     },

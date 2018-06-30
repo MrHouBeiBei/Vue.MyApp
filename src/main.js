@@ -74,6 +74,8 @@ Object.keys(directives).forEach( key => Vue.directive(key, directives[key]))
 
 Vue.use(Vuex)
 
+console.log('Vue全局属性', Object.getOwnPropertyNames(Vue))
+
 new Vue({
   el: '#app',
   router,
