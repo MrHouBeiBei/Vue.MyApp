@@ -1,6 +1,7 @@
 <template>
-  <el-menu class="el-menu-style" :default-openeds="['1']" default-active="1-1" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" @select="menuSelect">
-    <div v-for="(menu, index1) of menuData" :key="index1" >
+  <el-menu class="el-menu-style" :default-openeds="menu.defaultOpeneds" :default-active="menu.defaultActive" background-color="#545c64" text-color="#fff"
+    active-text-color="#ffd04b" @select="menuSelect">
+    <div v-for="(menu, index1) of menuData" :key="index1">
       <el-submenu :index="menu.index" v-if="menu.child&&menu.child.length>0">
         <template slot="title">
           <i :class="menu.icon"></i>
@@ -22,12 +23,11 @@
   export default {
     data() {
       return {
+        menu: {
+          defaultOpeneds: [],  // ['1']
+          defaultActive: '',   // '1-1'
+        },
         menuData: [{
-          name: 'test',
-          icon: 'el-icon-edit',
-          index: '-1',
-          path: {path: 'test'}
-        },{
             name: 'vue',
             icon: 'el-icon-edit',
             index: '1',
@@ -40,14 +40,18 @@
             }, {
               name: '自定义指令',
               index: '1-3',
-            },{
+            }, {
               name: 'axios',
               index: '1-4',
-              path: {path: 'axios'}
-            },{
+              path: {
+                path: 'axios'
+              }
+            }, {
               name: '全局属性',
               index: '1-5',
-              path: {path: 'globalProperty'}
+              path: {
+                path: 'globalProperty'
+              }
             }]
           },
           {
@@ -55,29 +59,60 @@
             icon: 'el-icon-setting',
             index: '2',
             child: [],
+          }, {
+            name: '插件',
+            icon: 'el-icon-success',
+            index: '3',
+            child: [{
+              name: '自定义插件内容',
+              index: '3-1',
+            }, {
+              name: '自定义toast插件',
+              index: '3-2',
+            }]
           },{
-              name: '插件',
-              icon: 'el-icon-success',
-              index: '3',
-              child: [{
-                  name: '自定义插件内容',
-                  index: '3-1',
-              },{
-                  name: '自定义toast插件',
-                  index: '3-2',
-              }]
-          }
+            name: 'test',
+            icon: 'el-icon-edit',
+            index: '4',
+            path: {
+              path: 'test'
+            }
+          }, 
         ]
       }
     },
+    mounted() {
+      // console.log(this.$router)
+      console.log(this.$route)
+      // console.log(this.$route.path.split('/'))
+      this.initMenu()
+    },
     methods: {
+      initMenu() {
+        var nowPath = this.$route.path.split('/')[this.$route.path.split('/').length - 1]
 
+        this.menuData.forEach(menu => {
+          if (menu.child && menu.child.length > 0) {
+            menu.child.forEach(item => {
+              if (item.path && item.path.path === nowPath) {
+                this.menu.defaultActive = item.index
+                this.menu.defaultOpeneds.splice(0, 1, menu.index)
+              }
+            })
+          } else {
+            if(menu.path && menu.path.path === nowPath) {
+              this.menu.defaultActive = menu.index
+              this.menu.defaultOpeneds.splice(0, 1)
+            }
+          }
+        });
+      },
       menuSelect(index, indexPath) {
         console.log(index)
         console.log(indexPath)
       },
       menuClick(item) {
-        if(item.path) {
+        if (item.path) {
           this.$router.push(item.path)
         }
       }
