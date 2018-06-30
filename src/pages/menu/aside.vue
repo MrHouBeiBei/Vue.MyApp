@@ -1,6 +1,6 @@
 <template>
-  <el-menu class="el-menu-style" :default-openeds="menu.defaultOpeneds" :default-active="menu.defaultActive" background-color="#545c64" text-color="#fff"
-    active-text-color="#ffd04b" @select="menuSelect">
+  <el-menu class="el-menu-style" :default-openeds="menu.defaultOpeneds" :default-active="menu.defaultActive" background-color="#545c64"
+    text-color="#fff" active-text-color="#ffd04b" @select="menuSelect">
     <div v-for="(menu, index1) of menuData" :key="index1">
       <el-submenu :index="menu.index" v-if="menu.child&&menu.child.length>0">
         <template slot="title">
@@ -24,8 +24,8 @@
     data() {
       return {
         menu: {
-          defaultOpeneds: [],  // ['1']
-          defaultActive: '',   // '1-1'
+          defaultOpeneds: [], // ['1']
+          defaultActive: '', // '1-1'
         },
         menuData: [{
             name: 'vue',
@@ -52,6 +52,12 @@
               path: {
                 path: 'globalProperty'
               }
+            }, {
+              name: '路由监听',
+              index: '1-6',
+              path: {
+                path: 'route'
+              }
             }]
           },
           {
@@ -70,22 +76,28 @@
               name: '自定义toast插件',
               index: '3-2',
             }]
-          },{
+          }, {
             name: 'test',
             icon: 'el-icon-edit',
             index: '4',
             path: {
               path: 'test'
             }
-          }, 
+          },
         ]
       }
     },
     mounted() {
       // console.log(this.$router)
-      console.log(this.$route)
+      console.log('route', this.$route)
       // console.log(this.$route.path.split('/'))
       this.initMenu()
+    },
+    watch: {
+      $route(to, from) {
+        console.log('to', from)
+        console.log('from', from)
+      }
     },
     methods: {
       initMenu() {
@@ -100,7 +112,7 @@
               }
             })
           } else {
-            if(menu.path && menu.path.path === nowPath) {
+            if (menu.path && menu.path.path === nowPath) {
               this.menu.defaultActive = menu.index
               this.menu.defaultOpeneds.splice(0, 1)
             }
@@ -108,8 +120,8 @@
         });
       },
       menuSelect(index, indexPath) {
-        console.log(index)
-        console.log(indexPath)
+        // console.log(index)
+        // console.log(indexPath)
       },
       menuClick(item) {
         if (item.path) {
