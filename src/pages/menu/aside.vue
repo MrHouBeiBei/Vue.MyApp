@@ -26,7 +26,7 @@
           name: 'test',
           icon: 'el-icon-edit',
           index: '-1',
-          path: {path: '/test'}
+          path: {path: 'test'}
         },{
             name: 'vue',
             icon: 'el-icon-edit',
@@ -43,7 +43,11 @@
             },{
               name: 'axios',
               index: '1-4',
-              path: {path: '/axios'}
+              path: {path: 'axios'}
+            },{
+              name: '全局可枚举属性',
+              index: '1-5',
+              path: {path: 'globalProperty'}
             }]
           },
           {

@@ -5,6 +5,8 @@ import store from '@/vuex/store'
 import Hello from "@/components/Hello";
 import test from "@/pages/test";
 
+import moduleA from './moduleA'
+
 Vue.use(Router);
 
 // export default new Router({
@@ -108,7 +110,7 @@ const router = new Router({
         import(/* webpackChunkName: "group-menu" */ "@/pages/menu/main.vue"),
         children: [
           {
-            path: "/axios",
+            path: "axios",
             name: "axios测试&promise",
             component: () =>
               import(/* webpackChunkName: "group-axios" */ "@/pages/http/axios.vue"),
@@ -117,7 +119,7 @@ const router = new Router({
             }
           },
           {
-            path: "/test",
+            path: "test",
             name: "test",
             component: test,
             meta: {
@@ -125,7 +127,7 @@ const router = new Router({
               test: true
             }
           },   
-        ],
+        ].concat(moduleA),
     }
     
 
