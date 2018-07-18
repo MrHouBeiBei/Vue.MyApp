@@ -59,6 +59,9 @@
       <div class="vw-a">vw</div>
       <div class="vw-b">vw</div>
     </div>
+    
+    <h4>ES6解构</h4>
+    <input type="button" value="解构测试函数" @click="solveFn">
 
   </div>
 </template>
@@ -181,7 +184,29 @@
           }
         ]
         this.$store.commit(PERSONS, list)
+      },
+
+      // 解构测试函数
+      solveFn() {
+
+        // 数组解构
+        function a([a,b]) {
+          console.log('数组解构',a, b)
+        }
+        var arr1 = [1, 2]
+        a(arr1)
+
+        // 对象解构
+        function b({bb, aa}) {   //字段名相对应
+          console.log('对象解构', aa, bb)
+        }
+        var obj1 = {
+          aa: 'aa',
+          bb: 'bb'
+        }
+        b(obj1)
       }
+
     }
   }
 
