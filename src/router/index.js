@@ -110,6 +110,10 @@ const router = new Router({
         import(/* webpackChunkName: "group-menu" */ "@/pages/menu/main.vue"),
         children: [
           {
+            path: "/",
+            redirect: 'test'
+          },
+          {
             path: "axios",
             name: "axios测试&promise",
             component: () =>
