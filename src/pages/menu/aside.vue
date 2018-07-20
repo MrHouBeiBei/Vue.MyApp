@@ -84,6 +84,18 @@
               path: 'test'
             }
           },
+          {
+            name: 'JS',
+            icon: 'el-icon-edit',
+            index: '5',
+            child: [{
+              name: '黏贴板监听',
+              index: '5-1',
+              path: {
+                path: 'paste'
+              }
+            },]
+          },
         ]
       }
     },
