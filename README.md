@@ -63,3 +63,6 @@ git commit命令，改为使用git cz
 
 ## zone.js
 上下文环境变量
+
+## 移动端调试 
+VConsole
