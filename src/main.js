@@ -15,6 +15,10 @@ import "./components/animate.css"
 import "./components/app.js"
 // import "./components/_common.scss"
 
+// 调试插件
+// import vConsole from 'vconsole';
+// new vConsole()
+
 // 插件
 import MyPlugin from "./components/myPlugin"
 import toastPlugin from "./components/toastPlugin"
@@ -76,10 +80,13 @@ Vue.use(Vuex)
 
 console.log('Vue全局属性', Object.getOwnPropertyNames(Vue))
 
-new Vue({
+var vm = new Vue({
   el: '#app',
   router,
   store,
   template: '<App/>',
   components: { App }
 })
+
+window.vm = vm
+Vue.prototype.vm = vm

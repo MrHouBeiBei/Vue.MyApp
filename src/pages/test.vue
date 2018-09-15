@@ -63,6 +63,9 @@
     <h4>ES6解构</h4>
     <input type="button" value="解构测试函数" @click="solveFn">
 
+    <h4>在组件中两种获取Vue实例方法</h4>
+    <input type="button" value="获取" @click="getVue">
+
   </div>
 </template>
 
@@ -205,6 +208,12 @@
           bb: 'bb'
         }
         b(obj1)
+      },
+
+      // 获取Vue实例
+      getVue() {
+        console.log(vm)
+        console.log(this.vm)
       }
 
     }
@@ -229,7 +238,7 @@
   } //vh、vw
   .vw-a {
     display: inline-block;
-    width: 80vw;
+    width: 50vw;
     background-color: pink;
   }
 
