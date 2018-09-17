@@ -5,7 +5,8 @@
   "author": "MrHoubeibei <843834089@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
+    "dev": "cross-env NODE_ENV=development node build/dev-server.js",
+    "prodDev": "cross-env NODE_ENV=preProdDev node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",

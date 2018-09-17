@@ -33,6 +33,7 @@
 </style>
 
 <script>
+   import testService from '../../share/test.service'
   import {
     AUTHOR,
     SET_TOKEN
@@ -46,6 +47,11 @@
           password: '',
         }
       }
+    },
+    created() {
+      let log = console.log
+      log(process.env)
+      console.log(testService.envTest())
     },
     mounted() {
       document.onkeyup = (e) => {

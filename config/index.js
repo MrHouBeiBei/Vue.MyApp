@@ -1,6 +1,15 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 
+var env = {
+  NODE_ENV: '"development"'
+};
+if(process.env.NODE_ENV === 'development' || '') {
+  env.NODE_ENV = '"development"'
+} else if (process.env.NODE_ENV === 'preProdDev') {
+  env.NODE_ENV = '"preProdDev"'
+}
+
 module.exports = {
   build: {
     env: require('./prod.env'),
@@ -23,7 +32,8 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   dev: {
-    env: require('./dev.env'),
+    // env: require('./dev.env'),
+    env: env,
     port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
