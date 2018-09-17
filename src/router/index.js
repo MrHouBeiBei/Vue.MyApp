@@ -105,7 +105,7 @@ const router = new Router({
     // 导航
     {
       path: "/nav",
-      name: "导航",
+      // name: "导航",  //has a default child route这里不用再定义
       component: () =>
         import(/* webpackChunkName: "group-menu" */ "@/pages/menu/main.vue"),
         children: [
