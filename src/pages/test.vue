@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="test-box">
     <h2>{{msg}}</h2>
     <p class="global">全局样式测试</p>
     <p class="lessTest">sass配置测试</p>
@@ -223,6 +223,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
+  .test-box{
+    padding-left: 0.1rem;
+  }
   .lessTest {
     font-size: 50/2px
   }

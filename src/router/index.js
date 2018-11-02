@@ -33,15 +33,15 @@ const router = new Router({
       // name: "Hello",
       // component: Hello
     },
-    // {
-    //   path: "/test",
-    //   name: "test",
-    //   component: test,
-    //   meta: {
-    //     requireAuth: false, // 添加该字段，表示进入这个路由是需要登录的
-    //     test: true
-    //   }
-    // },    
+    {
+      path: "/test",
+      name: "test",
+      component: test,
+      meta: {
+        requireAuth: false, // 添加该字段，表示进入这个路由是需要登录的
+        test: true
+      }
+    },    
     {
       path: "/data",
       name: "响应式属性测试",

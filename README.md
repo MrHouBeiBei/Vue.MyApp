@@ -66,3 +66,11 @@ git commit命令，改为使用git cz
 
 ## 移动端调试 
 VConsole
+
+## 订阅
+subscribe
+
+## 链式取值
+用法 a?.b
+bable 版本 7.0以上
+插件 babel-plugin-transform-optional-chaining    
