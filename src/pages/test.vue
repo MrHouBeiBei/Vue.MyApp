@@ -66,6 +66,9 @@
     <h4>在组件中两种获取Vue实例方法</h4>
     <input type="button" value="获取" @click="getVue">
 
+    <h4>数组和类数组对象</h4>
+    <input type="button" value="类数组" @click="getClassArray">
+
   </div>
 </template>
 
@@ -214,6 +217,24 @@
       getVue() {
         console.log(vm)
         console.log(this.vm)
+      },
+
+      // 类数组对象
+      getClassArray() {
+        //只包含使用从零开始，且自然递增的整数做键名，并且定义了length表示元素个数的对象，我们就认为他是类数组对象！
+        var arr = [1, 2, 3];
+        var obj = {
+          0: 1, 
+          1: 2, 
+          2: 3, 
+          length: 3
+          };
+        console.log('arr[0]', arr[0])
+        console.log('obj[0]', obj[0])
+        
+        // 赋值
+        obj[0] = 9
+        console.log('obj[0]赋值后', obj[0])
       }
 
     }
