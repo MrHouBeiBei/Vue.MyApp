@@ -6,14 +6,14 @@
       </el-header>
       <el-container class="main-container">
         <!-- <el-aside class="aside" style="background-color: rgb(39,43,46)"> -->
-        <el-aside class="aside">
+        <el-aside class="aside" width="220px">
             <aside-menu></aside-menu>
         </el-aside>
         <el-container>
           <el-main>
             <router-view></router-view>
           </el-main>
-          <el-footer style="background-color: rgb(55,61,65)">footer</el-footer>
+          <!-- <el-footer style="background-color: rgb(55,61,65)">footer</el-footer> -->
         </el-container>
       </el-container>
     </el-container>
