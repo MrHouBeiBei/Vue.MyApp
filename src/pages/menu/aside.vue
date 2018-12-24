@@ -88,13 +88,21 @@
             name: 'JS',
             icon: 'el-icon-edit',
             index: '5',
-            child: [{
-              name: '黏贴板监听',
-              index: '5-1',
-              path: {
-                path: 'paste'
+            child: [
+              {
+                name: '黏贴板监听',
+                index: '5-1',
+                path: {
+                  path: 'paste'
+                }
+              },{
+                name: 'canvas绘图',
+                index: '5-2',
+                path: {
+                  path: 'canvas'
+                }
               }
-            },]
+            ]
           },
         ]
       }

@@ -15,7 +15,7 @@ const router = new Router({
 
   //滚动行为
   scrollBehavior (to, from, savedPosition) {
-    // console.log(to)
+    console.log(to, from, savedPosition)
     if(to.meta.scroll) {
       // return { x: 0, y: 2 }
     }
