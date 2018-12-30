@@ -74,3 +74,7 @@ subscribe
 用法 a?.b
 bable 版本 7.0以上
 插件 babel-plugin-transform-optional-chaining    
+
+## EditorConfig
+项目本身来控制代码风格。
+EditorConfig包含一个用于定义代码格式的文件（.editorconfig）和一批编辑器插件，这些插件是让编辑器读取配置文件并以此来格式化代码。 
