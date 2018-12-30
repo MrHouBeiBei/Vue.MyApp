@@ -1,3 +1,4 @@
+import { TEST } from './mutations-type'
 const state = {
     author: 'Wise Wrong',
     token: false,
@@ -12,5 +13,6 @@ const state = {
         }
     ]
 }
+state[TEST] = null
 
 export default state
