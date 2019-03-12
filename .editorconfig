@@ -11,6 +11,12 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{js,py}]
+charset = utf-8
+
+
 # Tab indentation (no size specified)
 [Makefile]
 indent_style = tab
@@ -52,3 +58,7 @@ trim_trailing_whitespace = false
 # trim_trailing_whitespace	是否将行尾空格自动删除
 # insert_final_newline	是否使文件以一个空白行结尾
 # root	表明是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件
+
+
+# 拓展
+# 当用IDE打开一个文件时，EditorConfig插件会在打开文件的目录和其每一级父节点查找.editorconfig文件，直到找到一个配置了root = true的配置文件。
